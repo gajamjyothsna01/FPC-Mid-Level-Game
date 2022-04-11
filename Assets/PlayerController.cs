@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     int maxMed = 100;
     int reloadAmmo = 0;
     int maxReloadAmmo = 100;
+   // public AudioSource audioSource;
    // bool isGrounded = false;
     // Start is called before the first frame update
     void Start()
@@ -72,7 +73,7 @@ public class PlayerController : MonoBehaviour
            
         }
        else if(animator.GetBool("isWalking"))
-            {
+        { 
             animator.SetBool("isWalking", false);
         }
 
@@ -155,7 +156,11 @@ public class PlayerController : MonoBehaviour
         }
         else if(collision.gameObject.tag == "Lava")
         {
-            //Need to Trigger dead aound, when medical is less than zero.
+            //Need to Trigger dead Sound, when medical is less than zero.
+            if(medical < 0)
+            {
+                //audioSource.Play();
+            }
             medical = Mathf.Clamp(medical - 10, 0, maxMed) ;
             Debug.Log("Medical " + medical);
         }
