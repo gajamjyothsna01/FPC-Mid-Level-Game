@@ -763,7 +763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieePrefabs:
   - {fileID: 995453206}
-  - {fileID: 995453206}
+  - {fileID: 5176861845160572960, guid: 6a1d6fe89cd7e4fe486e4cabf09b8d3d, type: 3}
   number: 10
   spawnRadius: 5
 --- !u!1 &1681561558 stripped
