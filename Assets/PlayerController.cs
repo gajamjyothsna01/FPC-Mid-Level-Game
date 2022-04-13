@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     int reloadAmmo = 0;
     int maxReloadAmmo = 100;
     public Transform bulletLaunch; //Point to launch the Bullets.
+    
    // public AudioSource audioSource;
    // bool isGrounded = false;
     // Start is called before the first frame update
@@ -88,7 +89,12 @@ public class PlayerController : MonoBehaviour
 
     private void WhenZombieeGotHit()
     {
-       
+        RaycastHit hitInfo;
+        //Launching The ray from the Bullet Lauch to get whether it hits zombiee or not.
+        if (Physics.Raycast(bulletLaunch.position, bulletLaunch.forward, out hitInfo, 100f)) ;
+        {
+            GameObject hitZombiee = hitInfo.collider.gameObject;
+        }
     }
 
     private void FixedUpdate()

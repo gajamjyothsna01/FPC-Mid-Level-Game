@@ -329,75 +329,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3603689171792376952, guid: 4ee0e5e1833095f40ba4ad7ece1bf6c7, type: 3}
   m_PrefabInstance: {fileID: 203846856}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &345736396
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5542127211463571574, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 286382807}
-    - target: {fileID: 5542127211463571574, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: runningSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5542127211463571574, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: walkingSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643912976069227624, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643912976069227624, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 494.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643912976069227624, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643912976069227624, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 268
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643912976069227624, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643912976069227624, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643912976069227624, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643912976069227624, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643912976069227624, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643912976069227624, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643912976069227624, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8649283112028866171, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
-      propertyPath: m_Name
-      value: zombiegirl
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7912ec467aa9147a59e49b3925ad126e, type: 3}
 --- !u!1 &391219472
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,3 +902,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &5782440965845551571
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2078072845680801129, guid: 2100a94d422340c488dd9601528e004c, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 286382807}
+    - target: {fileID: 2192249821856627063, guid: 2100a94d422340c488dd9601528e004c, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192249821856627063, guid: 2100a94d422340c488dd9601528e004c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 494.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192249821856627063, guid: 2100a94d422340c488dd9601528e004c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192249821856627063, guid: 2100a94d422340c488dd9601528e004c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 268
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192249821856627063, guid: 2100a94d422340c488dd9601528e004c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192249821856627063, guid: 2100a94d422340c488dd9601528e004c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192249821856627063, guid: 2100a94d422340c488dd9601528e004c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192249821856627063, guid: 2100a94d422340c488dd9601528e004c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192249821856627063, guid: 2100a94d422340c488dd9601528e004c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192249821856627063, guid: 2100a94d422340c488dd9601528e004c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192249821856627063, guid: 2100a94d422340c488dd9601528e004c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897844542285515620, guid: 2100a94d422340c488dd9601528e004c, type: 3}
+      propertyPath: m_Name
+      value: zombiegirl
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2100a94d422340c488dd9601528e004c, type: 3}
