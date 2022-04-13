@@ -12,6 +12,8 @@ public class ZombieController : MonoBehaviour
     public List<AudioClip> audioClips;
     public float walkingSpeed;
     public float runningSpeed;
+
+    public GameObject ragDollPrefab;
     enum STATE { IDLE, WONDER, CHASE, ATTACK, DEAD };
     STATE state = STATE.IDLE;//default state
     // Start is called before the first frame update
@@ -22,6 +24,8 @@ public class ZombieController : MonoBehaviour
         agent = this.GetComponent<NavMeshAgent>();
         //audio = this.GetComponent<AudioSource>();
         //.playOnAwake = audioClips[0];
+        
+
     }
 
     // Update is called once per frame
@@ -67,6 +71,15 @@ public class ZombieController : MonoBehaviour
         {
             anim.SetBool("isDead", true);
         }*/
+       /* if (Input.GetKeyDown(KeyCode.M))
+        {
+            GameObject tempRagDoll  = Instantiate(ragDollPrefab, this.transform.position, Quaternion.identity);
+            tempRagDoll.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward*1000);
+            Destroy(this.gameObject);
+            return;
+
+        }*/
+
 
         if (target == null)
         {
@@ -143,6 +156,10 @@ public class ZombieController : MonoBehaviour
                 break;
 
             case STATE.DEAD:
+                GameObject tempRagDoll = Instantiate(ragDollPrefab, this.transform.position, Quaternion.identity);
+                tempRagDoll.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 1000);
+                Destroy(this.gameObject);
+                
                 break;
 
             default:

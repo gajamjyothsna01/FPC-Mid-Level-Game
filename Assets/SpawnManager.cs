@@ -9,10 +9,12 @@ public class SpawnManager : MonoBehaviour
     public int number;
     public float spawnRadius;
     bool spawnOnStart = true;
+
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        
         CreateAllZombiees();
     }
 
@@ -25,7 +27,7 @@ public class SpawnManager : MonoBehaviour
             if (NavMesh.SamplePosition(randompoint, out hit, 10f, NavMesh.AllAreas))
             {
                 Instantiate(zombieePrefabs[0], randompoint, Quaternion.identity);
-                Instantiate(zombieePrefabs[1], randompoint, Quaternion.identity);
+                //Instantiate(zombieePrefabs[1], randompoint, Quaternion.identity);
 
             }
             else

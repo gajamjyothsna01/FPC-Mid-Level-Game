@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     int maxMed = 100;
     int reloadAmmo = 0;
     int maxReloadAmmo = 100;
+    public Transform bulletLaunch; //Point to launch the Bullets.
    // public AudioSource audioSource;
    // bool isGrounded = false;
     // Start is called before the first frame update
@@ -45,8 +47,9 @@ public class PlayerController : MonoBehaviour
             {
                 // animator.SetBool("isFiring", !animator.GetBool("isFiring"));
                 animator.SetTrigger("IsFiring");
+                WhenZombieeGotHit();
                 ammo = Mathf.Clamp(ammo - 10, 0, maxAmmo);
-                Debug.Log(ammo);
+               // Debug.Log(ammo);
             }
             else
             {
@@ -82,6 +85,12 @@ public class PlayerController : MonoBehaviour
        
         //transform.Translate(inputX*playerSpeed, inputZ*playerSpeed, );
     }
+
+    private void WhenZombieeGotHit()
+    {
+       
+    }
+
     private void FixedUpdate()
     {
         inputX = Input.GetAxis("Horizontal");
