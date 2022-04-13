@@ -37,14 +37,14 @@ public class PlayerController : MonoBehaviour
     {
        if(Input.GetKeyDown(KeyCode.F))
         {
-            animator.SetBool("isAiming", !animator.GetBool("isAiming"));
+            animator.SetBool("IsAiming", !animator.GetBool("IsAiming"));
         }
-       if(Input.GetMouseButton(0) && !animator.GetBool("isFiring"))
+       if(Input.GetMouseButton(0) && !animator.GetBool("IsFiring"))
         {
             if(ammo > 0)
             {
                 // animator.SetBool("isFiring", !animator.GetBool("isFiring"));
-                animator.SetTrigger("isFiring");
+                animator.SetTrigger("IsFiring");
                 ammo = Mathf.Clamp(ammo - 10, 0, maxAmmo);
                 Debug.Log(ammo);
             }
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         }
        if(Input.GetKeyDown(KeyCode.R))
         {
-            animator.SetTrigger("isReloading");
+            animator.SetTrigger("IsReload");
             int amountAmmoNeeded = maxReloadAmmo - reloadAmmo;
             int ammoAvailable = amountAmmoNeeded < ammo ? amountAmmoNeeded : ammo;
             ammo -= ammoAvailable;
@@ -66,15 +66,15 @@ public class PlayerController : MonoBehaviour
         }
        if(Mathf.Abs(inputX)>0 || Mathf.Abs(inputZ)>0)
         {
-            if(!animator.GetBool("isWalking"))
+            if(!animator.GetBool("IsWalking"))
             {
-                animator.SetBool("isWalking", true);
+                animator.SetBool("IsWalking", true);
             }
            
         }
-       else if(animator.GetBool("isWalking"))
+       else if(animator.GetBool("IsWalking"))
         { 
-            animator.SetBool("isWalking", false);
+            animator.SetBool("IsWalking", false);
         }
 
 
