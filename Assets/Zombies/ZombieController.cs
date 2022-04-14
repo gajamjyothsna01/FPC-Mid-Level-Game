@@ -159,6 +159,8 @@ public class ZombieController : MonoBehaviour
                 /*GameObject tempRagDoll = Instantiate(ragDollPrefab, this.transform.position, Quaternion.identity);
                 tempRagDoll.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 1000);
                 Destroy(this.gameObject);*/
+                Destroy(agent);
+                this.GetComponent<SinkToGround>().ReadyToSink();
                 
                 break;
 

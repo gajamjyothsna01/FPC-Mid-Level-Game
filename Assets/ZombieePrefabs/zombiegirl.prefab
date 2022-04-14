@@ -1822,6 +1822,7 @@ GameObject:
   - component: {fileID: 4613309008623533715}
   - component: {fileID: 1378723090233145960}
   - component: {fileID: 1490100923783362581}
+  - component: {fileID: 6034913162994594904}
   m_Layer: 0
   m_Name: zombiegirl
   m_TagString: Zombiee
@@ -1880,8 +1881,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 3603689171792376952, guid: 4ee0e5e1833095f40ba4ad7ece1bf6c7, type: 3}
   audioClips: []
-  walkingSpeed: 10
-  runningSpeed: 5
+  walkingSpeed: 1
+  runningSpeed: 2
   ragDollPrefab: {fileID: 1019582628933758305, guid: 559f4001bd617b04eb9f27d07d483d8c, type: 3}
 --- !u!195 &1378723090233145960
 NavMeshAgent:
@@ -1919,6 +1920,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6034913162994594904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8422925811418824862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adffc2c652622184480623ba060b411e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 0
 --- !u!1 &8625139926508801375
 GameObject:
   m_ObjectHideFlags: 0
