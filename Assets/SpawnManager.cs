@@ -22,11 +22,13 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0; i < number; i++)
         {
+            
             Vector3 randompoint = transform.position + Random.insideUnitSphere * spawnRadius;
             NavMeshHit hit;
             if (NavMesh.SamplePosition(randompoint, out hit, 10f, NavMesh.AllAreas))
             {
-                Instantiate(zombieePrefabs[0], randompoint, Quaternion.identity);
+                int k = Random.Range(0, zombieePrefabs.Length);
+                Instantiate(zombieePrefabs[k], randompoint, Quaternion.identity);
                 //Instantiate(zombieePrefabs[1], randompoint, Quaternion.identity);
 
             }

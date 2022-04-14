@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
             GameObject hitZombiee = hitInfo.collider.gameObject;
             if(hitZombiee.tag =="Zombiee")
             {
-                if(UnityEngine.Random.Range(0f,10f) < 5)
+                if(UnityEngine.Random.Range(0, 10) < 5)
                 {
                     GameObject tempRagDoll = hitZombiee.GetComponent<ZombieController>().ragDollPrefab;
                     GameObject newTempRagDoll = Instantiate(tempRagDoll, hitZombiee.transform.position, hitZombiee.transform.rotation);
