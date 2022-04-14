@@ -91,9 +91,29 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit hitInfo;
         //Launching The ray from the Bullet Lauch to get whether it hits zombiee or not.
-        if (Physics.Raycast(bulletLaunch.position, bulletLaunch.forward, out hitInfo, 100f)) ;
+        if (Physics.Raycast(bulletLaunch.position, bulletLaunch.forward, out hitInfo, 100f))
         {
             GameObject hitZombiee = hitInfo.collider.gameObject;
+            if(hitZombiee.tag =="Zombiee")
+            {
+                if(UnityEngine.Random.Range(0f,10f) < 5)
+                {
+                    GameObject tempRagDoll = hitZombiee.GetComponent<ZombieController>().ragDollPrefab;
+                    GameObject newTempRagDoll = Instantiate(tempRagDoll, hitZombiee.transform.position, hitZombiee.transform.rotation);
+                    newTempRagDoll.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 10000);
+                    Destroy(hitZombiee);
+                }
+                else
+                {
+                    /*
+                    hitZombiee.GetComponent<ZombieController>().TurnOffAllTriggerAnim();
+                    hitZombiee.GetComponent<ZombieController>().anim.SetBool("isDead", true);
+                    hitZombiee.GetComponent<ZombieController>().state = hitZombiee.GetComponent<ZombieController>().Sta.DEAD;*/
+                    hitZombiee.GetComponent<ZombieController>().KillZombiee();
+
+                }
+
+            }
         }
     }
 

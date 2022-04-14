@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class ZombieController : MonoBehaviour
 {
-    Animator anim;
+     Animator anim;
     public GameObject target;
     NavMeshAgent agent;
     //AudioSource audio;
@@ -14,8 +14,8 @@ public class ZombieController : MonoBehaviour
     public float runningSpeed;
 
     public GameObject ragDollPrefab;
-    enum STATE { IDLE, WONDER, CHASE, ATTACK, DEAD };
-    STATE state = STATE.IDLE;//default state
+   enum STATE { IDLE, WONDER, CHASE, ATTACK, DEAD };
+     STATE state = STATE.IDLE;//default state
     // Start is called before the first frame update
     void Start()
     {
@@ -156,9 +156,9 @@ public class ZombieController : MonoBehaviour
                 break;
 
             case STATE.DEAD:
-                GameObject tempRagDoll = Instantiate(ragDollPrefab, this.transform.position, Quaternion.identity);
+                /*GameObject tempRagDoll = Instantiate(ragDollPrefab, this.transform.position, Quaternion.identity);
                 tempRagDoll.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 1000);
-                Destroy(this.gameObject);
+                Destroy(this.gameObject);*/
                 
                 break;
 
@@ -199,5 +199,12 @@ public class ZombieController : MonoBehaviour
         }
         else
             return false;
+    }
+    
+    public void KillZombiee()
+    {
+        TurnOffAllTriggerAnim();
+        anim.SetBool("isDead", true);
+        state= STATE.DEAD;
     }
 }
