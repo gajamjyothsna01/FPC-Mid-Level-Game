@@ -3493,7 +3493,7 @@ GameObject:
   - component: {fileID: 9177342047347271577}
   m_Layer: 0
   m_Name: Jill_RagDoll
-  m_TagString: Untagged
+  m_TagString: RagDollZombiee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

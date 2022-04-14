@@ -9,6 +9,7 @@ TagManager:
   - Cube
   - Lava
   - Zombiee
+  - RagDollZombiee
   layers:
   - Default
   - TransparentFX
