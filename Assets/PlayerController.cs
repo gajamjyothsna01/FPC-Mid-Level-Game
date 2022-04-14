@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
    public Animator animator;
     public float playerSpeed;
     public float playerJumpForce;
+    public GameObject steveModelPrefab;
+    //public GameObject target;
     Rigidbody rb;
     public float rotationSpeed;
     public Camera cam;
@@ -19,7 +21,7 @@ public class PlayerController : MonoBehaviour
     int ammo = 100;
     int medical = 100;
     int maxAmmo = 100;
-    int maxMed = 100;
+    int maxMedical = 100;
     int reloadAmmo = 0;
     int maxReloadAmmo = 100;
     public Transform bulletLaunch; //Point to launch the Bullets.
@@ -180,12 +182,12 @@ public class PlayerController : MonoBehaviour
             ammo = Mathf.Clamp(ammo + 10, 0,maxAmmo);
             Debug.Log("Ammo" + ammo);
         }
-        if (collision.gameObject.tag == "Med" && medical < maxMed)
+        if (collision.gameObject.tag == "Med" && medical < maxMedical)
         {
             collision.gameObject.SetActive(false);
             Debug.Log("Collected Med Box");
            // medical = medical + 10;
-            medical = Mathf.Clamp(medical + 10, 0, maxMed) ;
+            medical = Mathf.Clamp(medical + 10, 0, maxMedical) ;
 
 
         }
@@ -196,8 +198,27 @@ public class PlayerController : MonoBehaviour
             {
                 //audioSource.Play();
             }
-            medical = Mathf.Clamp(medical - 10, 0, maxMed) ;
+            medical = Mathf.Clamp(medical - 10, 0, maxMedical) ;
             Debug.Log("Medical " + medical);
         }
     }
+    public void TakeHit(float value) //Valuw will be decreased some part from Health.
+    {
+        medical = (int)(Mathf.Clamp(medical - value, 0, maxMedical));
+        Debug.Log(medical);
+        if(medical <= 0)
+        {
+            Vector3 position = new Vector3(transform.position.x, Terrain.activeTerrain.SampleHeight(this.transform.position), transform.position.z);
+            GameObject tempSteve = Instantiate(steveModelPrefab,position,this.transform.rotation);
+            tempSteve.GetComponent<Animator>().SetTrigger("Death");
+            Debug.Log("Player is died");
+            GameStarts.isGameOver = true; 
+            Destroy(this.gameObject);
+            
+        }
+
+
+    }
+    
+   
 }

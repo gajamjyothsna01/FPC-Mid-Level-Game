@@ -81,8 +81,8 @@ public class ZombieController : MonoBehaviour
         }*/
 
 
-        if (target == null)
-        {
+        if (target == null && GameStarts.isGameOver == false)
+        { 
             target = GameObject.FindGameObjectWithTag("Player");
             return;
         }
@@ -127,6 +127,12 @@ public class ZombieController : MonoBehaviour
                 break;
 
             case STATE.CHASE:
+                if(GameStarts.isGameOver)
+                {
+                    TurnOffAllTriggerAnim();
+                    state = STATE.WONDER;
+                    return;
+                }
                 agent.SetDestination(target.transform.position);
                 agent.stoppingDistance = 2f;
                 TurnOffAllTriggerAnim();
@@ -142,9 +148,16 @@ public class ZombieController : MonoBehaviour
                     agent.ResetPath();
                 }
 
+                
                 break;
 
             case STATE.ATTACK:
+                if (GameStarts.isGameOver)
+                {
+                    TurnOffAllTriggerAnim();
+                    state = STATE.WONDER;
+                    return;
+                }
                 TurnOffAllTriggerAnim();
                 anim.SetBool("isAttacking", true);
                 transform.LookAt(target.transform.position);//Zombies should look at Player
@@ -190,6 +203,11 @@ public class ZombieController : MonoBehaviour
 
     private float DistanceToPlayer()
     {
+      
+        if(GameStarts.isGameOver)
+        {
+            return Mathf.Infinity;
+        }
         return Vector3.Distance(target.transform.position, this.transform.position);
     }
 
@@ -209,4 +227,22 @@ public class ZombieController : MonoBehaviour
         anim.SetBool("isDead", true);
         state= STATE.DEAD;
     }
+    int damageAmount = 5;
+    public void DamagePlayer()
+    {
+        if(target!=null)
+        {
+            target.GetComponent<PlayerController>().TakeHit(damageAmount);
+        }
+        
+
+    }
+}
+
+public class GameStarts
+{
+    public static bool isGameOver = false;
+    
+
+
 }

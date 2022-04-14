@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 286382808}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -329,6 +329,7 @@ MonoBehaviour:
   cam: {fileID: 3603689170879604654}
   minX: -90
   maxX: 90
+  bulletLaunch: {fileID: 0}
 --- !u!114 &286382808
 MonoBehaviour:
   m_ObjectHideFlags: 0
