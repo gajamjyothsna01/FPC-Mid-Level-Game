@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     float inputX, inputZ;
     int ammo = 100;
     int medical = 100;
-   
+    int maxAmmo = 100;
     int maxMedical = 100;
     int reloadAmmo = 0;
     int maxReloadAmmo = 100;
